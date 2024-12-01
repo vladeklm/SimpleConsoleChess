@@ -88,16 +88,17 @@ public class ChessBoard {
             }
         }
         if (result) {
-            if (xR < xK) {
-                board[xK-1][yK] = board[xR][yR];
-                board[xK-2][yK] = board[xK][yK];
+            if (yR < yK) {
+                board[xK][yK-1] = board[xR][yR];
+                board[xK][yK-2] = board[xK][yK];
             }
             else {
-                board[xK+1][yK] = board[xR][yR];
-                board[xK+2][yK] = board[xK][yK];
+                board[xK][yK+1] = board[xR][yR];
+                board[xK][yK+2] = board[xK][yK];
             }
             board[xR][yR] = null;
             board[xK][yK] = null;
+            this.nowPlayer = this.nowPlayerColor().equals("White") ? "Black" : "White";
         }
         return result;
     }

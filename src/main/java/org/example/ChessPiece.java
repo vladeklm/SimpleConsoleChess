@@ -15,7 +15,7 @@ public abstract class ChessPiece{
     public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
         boolean result = (line != toLine || column != toColumn)
                 && toColumn >= 0 && toColumn <= 7 && toLine >= 0 && toLine <= 7
-                && (chessBoard.board[toLine][toColumn] == null || !chessBoard.board[toLine][toColumn].getColor().equals(color));
+                && (chessBoard.board[toLine][toColumn] == null || !chessBoard.board[toLine][toColumn].getColor().equals(this.getColor()));
         return result;
     }
 
