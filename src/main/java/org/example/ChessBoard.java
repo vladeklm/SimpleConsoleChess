@@ -77,8 +77,8 @@ public class ChessBoard {
             for (int i = start + 1; i < finish; i++) {
                 for(int x= 0; x < 8; x++) {
                     for(int y = 0; y < 8; y++) {
-                        if(board[x][y] != null && !board[x][y].getSymbol().equals(this.nowPlayerColor())) {
-                            result = result && board[x][y].canMoveToPosition(this, x, y, xR, i);
+                        if(board[x][y] != null && !board[x][y].getColor().equals(this.nowPlayerColor())) {
+                            result = result && !board[x][y].canMoveToPosition(this, x, y, xR, i);
                         }
                         if (!result) {
                             break outerloop;
